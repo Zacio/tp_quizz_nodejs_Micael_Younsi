@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navBar">
+        <p>Bienvenue sur l'accueil du Q U I Z Z</p>
+        <button onclick="">
+            liste des salon
+        </button>
+        <button onclick="broadcastQuiz(1)">Diffuser le Quiz 1</button>
+        <div>
+            <p>Score :</p>
+            <p id="score">0</p>
+        </div>
+    </nav>
+
+    <section id="gameScreen">
+        <div id="salon">
+            <progress id="timerBar" max="10" value="0"></progress>
+            <div id="serverInput">
+                <label for="roomNameInput">Enter server name</label>
+                <input type="text" id="roomNameInput" placeholder="Nom du salon">
+                <br>
+                <label for="userNameInput">Enter player name</label>
+                <input type="text" id="userNameInput" placeholder="Nom du joueur">
+                <button onclick="joinRoom()">Rejoindre le salon</button>    
+            </div>
+
+            <div id="userList">
+
+            </div>
+        </div>
+    
+        <section id="quizSection">
+    
+        </section>
+    </section>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./viewControler.js"></script>
+    <script src="./socket.js"></script>
+</body>
+</html>
