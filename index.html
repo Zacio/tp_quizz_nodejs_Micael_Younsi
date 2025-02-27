@@ -9,9 +9,9 @@
 <body>
     <nav class="navBar">
         <p>Bienvenue sur l'accueil du Q U I Z Z</p>
-        <button onclick="">
-            liste des salon
-        </button>
+        <a href="salons">liste des salon</a>
+            
+        
         <button onclick="broadcastQuiz(1)">Diffuser le Quiz 1</button>
         <div>
             <p>Score :</p>
@@ -28,7 +28,7 @@
                 <br>
                 <label for="userNameInput">Enter player name</label>
                 <input type="text" id="userNameInput" placeholder="Nom du joueur">
-                <button onclick="joinRoom()">Rejoindre le salon</button>    
+                <button onclick="joinRoom('roomNameInput', 'userNameInput')">Rejoindre le salon</button>    
             </div>
 
             <div id="userList">

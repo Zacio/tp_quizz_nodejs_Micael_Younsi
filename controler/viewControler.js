@@ -132,3 +132,19 @@ function showResult(members){
     quizSection.appendChild(participentTextBalise)
   });
 }
+
+function showSalons(roomsNameList){
+  const section = document.getElementById("salons_section");
+  section.innerHTML = ""; // Clear previous content
+  if (roomsNameList.length === 0) {
+      section.innerHTML = "<p>No salons available.</p>";
+      return;
+  }
+
+  roomsNameList.forEach((roomName) => {
+      const div = document.createElement("div");
+      div.textContent = roomName;
+      div.classList.add("salon-item"); // Add a CSS class for styling
+      section.appendChild(div);
+  });
+}

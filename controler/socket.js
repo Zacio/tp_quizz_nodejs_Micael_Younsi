@@ -22,9 +22,9 @@ socket.on('error', (errorMessage) => {
 });
 
 // ---------------------Rejoindre le salon--------------
-function joinRoom() {
-  const roomName = document.getElementById('roomNameInput').value;
-  const userName = document.getElementById('userNameInput').value;
+function joinRoom(elemntIdOne, elemntIdTwo) {
+  const roomName = document.getElementById(elemntIdOne).value;
+  const userName = document.getElementById(elemntIdTwo).value;
   if (roomName && userName) {
     socket.emit('join_room', roomName, userName);
     console.log(`Rejoint le salon : ${roomName}`);
@@ -72,3 +72,11 @@ socket.on("show_Result", (members) => {
 function resetScore(){
   socket.emit('reset_score');
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  socket.emit('show_salons');
+});
+
+socket.on('get_salons_response', (roomsNameList) => {
+  showSalons(roomsNameList);
+});
